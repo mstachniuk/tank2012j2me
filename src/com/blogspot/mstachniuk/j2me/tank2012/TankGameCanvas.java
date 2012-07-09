@@ -17,7 +17,7 @@ public class TankGameCanvas extends AbstractTankCanvas {
     private int width;                  // szerokosc ekranu
     private int height;                 // wysokosc ekranu
     private Sprite tank;		// Sprite reprezentujący czołg
-    private final static int STEEP = 10;
+    private final static int STEP = 10;
     private TiledLayer grass;
     private int[][] grassTab = new int[][]{
         {0, 0, 0, 0, 5, 0, 0, 5},
@@ -171,25 +171,25 @@ public class TankGameCanvas extends AbstractTankCanvas {
 
         // naciśnięto w lewo
         if ((keyStates & LEFT_PRESSED) != 0) {
-            tank.move(-STEEP, 0);
+            tank.move(-STEP, 0);
             tank.setFrame(TANK_LEFT);
         }
 
         // naciśnięto w prawo
         if ((keyStates & RIGHT_PRESSED) != 0) {
-            tank.move(STEEP, 0);
+            tank.move(STEP, 0);
             tank.setFrame(TANK_RIGHT);
         }
 
         // naciśniętow w gorę
         if ((keyStates & UP_PRESSED) != 0) {
-            tank.move(0, -STEEP);
+            tank.move(0, -STEP);
             tank.setFrame(TANK_UP);
         }
 
         // naciśnięto w doł
         if ((keyStates & DOWN_PRESSED) != 0) {
-            tank.move(0, STEEP);
+            tank.move(0, STEP);
             tank.setFrame(TANK_DOWN);
         }
 
